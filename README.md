@@ -1,2 +1,3 @@
 # MyReactApp
-My React app with redux
+My React with Redux integration
+
