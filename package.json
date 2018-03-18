@@ -1,7 +1,7 @@
 {
   "name": "MyReactApp",
   "version": "0.1.0",
-  "description": "React web applications with webpack",
+  "description": "React-Redux web applications with webpack",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,7 +12,12 @@
   "license": "ISC",
   "dependencies": {
     "html-loader": "^0.5.5",
-    "json-loader": "^0.5.7"
+    "json-loader": "^0.5.7",
+    "react-redux": "^5.0.5",
+    "redux": "^3.7.1",
+    "redux-logger": "^3.0.6",
+    "redux-promise-middleware": "4.2.1",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "babel-core": "^6.7.2",
@@ -28,6 +33,7 @@
     "react-dom": "^16.2.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.12.14",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^1.14.1",
+    "whatwg-fetch": "^2.0.3"
   }
 }

@@ -1,0 +1,26 @@
+{
+"extends: "eslint:recommended",
+"plugins": ["react"],
+"env": {
+  "es6": true,
+  "node": true
+},
+"ecmaFeatures": {
+  "modules":true,
+  "experimentalObjectRestSpread": true
+},
+"global":{
+  "require": false,
+   "process": false,
+   "module": true,
+   "inject": true,
+   "_": false   
+},
+"rules": {
+ "no-console" : 0,
+ "no-unused-vars":0,
+ "no-debugger": 0,
+ "react/jsx-uses-react": "error",
+ "react/jsx-uses-vars": "error"
+}
+}

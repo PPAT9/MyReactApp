@@ -1,7 +1,14 @@
+export const constants = require('./constants');
+export const reducer = require('./reducer').default;
+		
 import React, {PureComponent}  from 'react';
 import {render} from 'react-dom';
 
 import employees from '../assets/sample-data.json';
+
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import * as employeeActions from './actions';
 
 class Employeeitem extends PureComponent {	
 	render(){	
@@ -21,10 +28,32 @@ class Employeeitem extends PureComponent {
 	}
 }
 
-export default class EmployeeListView extends PureComponent {
+class EmployeeListView extends PureComponent {
+	constructor(props){
+	   super(props);
+	   this.state = {
+			   employeeData: [],
+			   companyInfo: {}
+	   }
+	}
 	
-	render(){
-		const employeeview = employees.employees.map(			
+	componentWillMount(){
+		this.props.actions.fetchJson();
+	}
+	
+	componentWillReceiveProps(nextProps){
+		if ( nextProps.employeeData !== undefined && nextProps.employeeData !== this.props.employeeData){
+			console.log('componentWillReceiveProps', nextProps);
+			this.setState({
+				employeeData: nextProps.employeeData.employees,
+				companyInfo: nextProps.employeeData.companyInfo,
+			});
+			
+		}
+	}
+	
+	render(){		
+		const employeeview = this.state.employeeData.map(			
 			(item, i) => {					
 				return (<Employeeitem detials={item} id={i} key={i}/>)
 			}
@@ -39,4 +68,25 @@ export default class EmployeeListView extends PureComponent {
 		);
 	}
 }
+
+
+const mapStateToProps = (state) => {
+	return ({
+		employeeData: state.employee.employeeData
+	})
+}
+
+const mapDispatchToProps = (dispatch) => {
+	return ({actions: bindActionCreators(employeeActions, dispatch)});
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(EmployeeListView);
+
+
+
+
+
+
+
+
 
