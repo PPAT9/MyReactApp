@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
-import * as employeeReducer from './../components/employeeListView';
-import * as employeeConstant from '../components/constants';
+import * as employees from './../components/employees';
+
 
 
 
 const rootReducer = combineReducers(
-	{[employeeReducer.constants.name]: employeeReducer.reducer}
+	{[employees.constants.name]: employees.reducer}
 );
 
 export default rootReducer

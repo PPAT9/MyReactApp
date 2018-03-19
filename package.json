@@ -1,11 +1,11 @@
 {
-  "name": "MyReactApp",
+  "name": "EmployeeInfo",
   "version": "0.1.0",
   "description": "React-Redux web applications with webpack",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --port=8443 --https",
+    "start": "webpack-dev-server --port=8443 --http",
     "dist": "webpack -p"
   },
   "author": "Prashant",
@@ -13,6 +13,9 @@
   "dependencies": {
     "html-loader": "^0.5.5",
     "json-loader": "^0.5.7",
+    "loadash": "^1.0.0",
+    "lodash": "^4.17.5",
+    "react-bootstrap": "^0.32.1",
     "react-redux": "^5.0.5",
     "redux": "^3.7.1",
     "redux-logger": "^3.0.6",
