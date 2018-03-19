@@ -9,7 +9,7 @@ export default class EmployeeCardDetails extends PureComponent {
 			   <img className="thumb" src={item.avatar} />
 			   <article>
 			   		<div>{item.firstName} {item.lastName}</div>
-					<span>{_.truncate(_.split(item.bio, '.',1), {'length': 35})}</span>							
+					<span>{_.truncate(_.split(item.bio,'.',1),{'length':35})}</span>							
 				</article>
 			</div>
 		)

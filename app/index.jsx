@@ -5,7 +5,7 @@ import {Provider} from 'react-redux';
 import store from './store';
 
 
-require('../css/styles.css');
+require('./css/styles.css');
 import EmployeeListView from './components/employees'
 
 ReactDOM.render(
